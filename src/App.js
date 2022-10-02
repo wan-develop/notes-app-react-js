@@ -17,15 +17,17 @@ export default function App() {
     let data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (data) setList(data);
   }, [])
-
+  
   useEffect(() => {
+    
+    console.log("LISTA RENDERIZADA !")
     // Saves to localStorage in every list render
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(list));
 
   }, [list])
 
 
-  function handleAddButton() {
+  const handleAddButton = () => {
     // adds a new item to the list
     const textInputCurr = textInput.current;
     if (textInputCurr.value === "") return;
@@ -41,27 +43,35 @@ export default function App() {
     textInputCurr.value = "";
   }
 
-  function deleteItem(key) {
+  const deleteItem = (key) => {
 
     const newList = list.filter(item => item.id !== key);
     setList(newList);
 
   }
 
+
+  const keyPressed = (e) => {
+    //? Add new item using Enter
+    if (e.key !== 'Enter') return
+    handleAddButton()
+  }
+
   return (
     <div className="App">
-      <h1>Todo List</h1>
+      <h1>Notes App</h1>
       <section>
         <input
           ref={textInput}
           className="text-input"
-          placeholder="texto"
+          placeholder="content"
+          onKeyDown={(e)=>{keyPressed(e)}}
           />
         <button
           className="add-item-btn"
           onClick={handleAddButton}
           >
-          Adicionar
+          ADD
         </button>
       </section>
         <List list={list} deleteItem={deleteItem} />

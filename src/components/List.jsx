@@ -12,7 +12,7 @@ export default function List({ list, deleteItem }) {
   };
 
   const listItems = list.map((item) => (
-    <li key={item.id}>
+    <li className="list-item" key={item.id}>
       <div>
         {item.text.length < MAX_TEXT_LENGHT ? (
           <p>{item.text}</p>

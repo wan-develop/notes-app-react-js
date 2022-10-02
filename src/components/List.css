@@ -1,28 +1,46 @@
 .List {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 
   width: 100%;
 
+  max-height: 580px;
+  margin-top: 20px;
+
+  overflow-y: scroll;
   list-style: none;
 
+  padding: 0 10px;
   
 }
 
-.List li {
-  width: 100%;
-  margin: 2px 0px;
-  padding: 10px;
-
-  border: solid 1px white;
-  border-radius: 10px;
-
-  height: auto;
+.List:hover,
+.List:has(:focus) {
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
-.List li div {
+
+/*$  li tag */
+.list-item {
+  width: 100%;
+  max-width: 80%;
+  height: auto;
+
+  margin-bottom: 8px;
+  padding: 10px;
+
+  border: solid 3px white;
+  border-radius: 10px;
+  
+}
+
+.list-item:hover,
+.list-item:has(:focus) {
+  background-color: #336;
+}
+
+.list-item div {
   display: flex;
   justify-content: space-between;
 
@@ -30,18 +48,20 @@
   position: relative;
 }
 
-/*$ APLY THIS STYLE FOR P AND ... BUTTON */
-.List li div p,
+/*$ APLY THIS STYLE FOR P TAG AND ... BUTTON */
+.list-item div p,
 .hidden-content-btn {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
 
   margin-left: 10px;
   max-width: 50%;
 
+  color: white;
   max-width: 90%;
   word-wrap: break-word;
   word-spacing: 5px;
+
+  font-size: 1.3rem;
 }
 
 .delete-item-btn {
@@ -55,17 +75,17 @@
   border: none;
   border-radius: 20%;
   transition: 120ms;
+  min-width: 25px;
+
+  position: absolute;
+  right: 0px;
 }
 
 .delete-item-btn:hover {
   scale: 1.1;
 }
 
-.List .hidden-content-btn {
+.hidden-content-btn {
   background-color: transparent;
   border: none;
-  color: white;
-}
-.hidden-content-btn:hover {
-  text-decoration: underline;
 }
