@@ -17,10 +17,8 @@ export default function App() {
     let data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (data) setList(data);
   }, [])
-  
+
   useEffect(() => {
-    
-    console.log("LISTA RENDERIZADA !")
     // Saves to localStorage in every list render
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(list));
 
@@ -29,18 +27,19 @@ export default function App() {
 
   const handleAddButton = () => {
     // adds a new item to the list
-    const textInputCurr = textInput.current;
-    if (textInputCurr.value === "") return;
+
+    if (textInput.current.value === "") return;
 
     setList([
       {
+        //? Generates a random id
         id: v4(),
-        text: textInputCurr.value
+        text: textInput.current.value
       },
       ...list]
     );
 
-    textInputCurr.value = "";
+    textInput.current.value = "";
   }
 
   const deleteItem = (key) => {
@@ -65,16 +64,16 @@ export default function App() {
           ref={textInput}
           className="text-input"
           placeholder="content"
-          onKeyDown={(e)=>{keyPressed(e)}}
-          />
+          onKeyDown={(e) => { keyPressed(e) }}
+        />
         <button
           className="add-item-btn"
           onClick={handleAddButton}
-          >
+        >
           ADD
         </button>
       </section>
-        <List list={list} deleteItem={deleteItem} />
+      <List list={list} deleteItem={deleteItem} />
     </div>
   )
 
