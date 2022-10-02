@@ -1,0 +1,71 @@
+.List {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100%;
+
+  list-style: none;
+
+  
+}
+
+.List li {
+  width: 100%;
+  margin: 2px 0px;
+  padding: 10px;
+
+  border: solid 1px white;
+  border-radius: 10px;
+
+  height: auto;
+}
+
+.List li div {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  position: relative;
+}
+
+/*$ APLY THIS STYLE FOR P AND ... BUTTON */
+.List li div p,
+.hidden-content-btn {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+  margin-left: 10px;
+  max-width: 50%;
+
+  max-width: 90%;
+  word-wrap: break-word;
+  word-spacing: 5px;
+}
+
+.delete-item-btn {
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  font-weight: 600;
+  color: white;
+
+  background-color: #ff4444;
+  border: none;
+  border-radius: 20%;
+  transition: 120ms;
+}
+
+.delete-item-btn:hover {
+  scale: 1.1;
+}
+
+.List .hidden-content-btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+.hidden-content-btn:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,33 @@
+.App {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+
+  color: #ffffff;
+  background-color: #222222;
+
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+}
+
+.text-input {
+  text-align: center;
+  width: 50%;
+  margin-right: 10px;
+}
+
+.add-item-btn {
+  color: #ffffff;
+  background-color: #4444ff;
+  padding: 3px 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.add-item-btn:hover,
+.add-item-btn:focus {
+  background-color: #7777ff;
+}
